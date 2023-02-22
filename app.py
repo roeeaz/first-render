@@ -44,8 +44,8 @@ def user(user_id):
 
     if request.method == 'GET':
         return   {"username":user.username, "email":user.email,"id":user_id}
-        # return jsonify(res)
-        # return json.dumps(user.__dict__)
+        return jsonify(res)
+        return json.dumps(user.__dict__)
     elif request.method == 'PUT':
         user_data = request.get_json()
         user.username = user_data['username']
